@@ -1,12 +1,12 @@
-package main
-
-import "fmt"
+package a1
 
 /*
 给定整数数组nums和一个整数目标值target，在数组中找出和为target的两个数的下标
 输入：nums = [2, 7, 11, 15], target = 9
 输出：[0, 1]
 */
+
+import "fmt"
 
 func f(nums []int, target int) {
 	num2idx := make(map[int]int)
