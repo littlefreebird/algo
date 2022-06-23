@@ -1,7 +1,5 @@
-module study
+module github.com/littlefreebird/algo/a20
 
 go 1.17
 
-replace github.com/littlefreebird/algo/common => ../common
-
-require github.com/littlefreebird/algo/common v0.0.0-00010101000000-000000000000
+require github.com/littlefreebird/algo/common v0.0.0-20220623152232-d7cf1f26b704
