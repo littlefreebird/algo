@@ -1,5 +1,7 @@
 package a21
 
+//给定一个整数n，给出所有含有n个括号的字符串
+
 func f(n int) []string {
 	if n < 1 || n > 8 {
 		return []string{}
