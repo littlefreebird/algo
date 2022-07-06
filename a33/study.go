@@ -15,6 +15,7 @@ func dfs(a []int, target int, idx int, p []int, paths [][]int) {
 	}
 	if target == 0 {
 		paths = append(paths, p)
+		return
 	}
 	for i := idx; i < len(a); i++ {
 		if a[i] < target {
