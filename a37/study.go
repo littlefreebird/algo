@@ -7,14 +7,16 @@ import "fmt"
 func f(a []int) {
 	used := make([]int, len(a))
 	var ret [][]int
-	var one []int
+	one := make([]int, 0, len(a))
 	f1(a, used, one, &ret)
 	fmt.Println(ret)
 }
 
 func f1(a []int, used []int, one []int, ret *[][]int) {
 	if len(one) == len(a) {
-		*ret = append(*ret, one)
+		dst := make([]int, len(one))
+		copy(dst, one)
+		*ret = append(*ret, dst)
 		return
 	}
 	for i := 0; i < len(a); i++ {
