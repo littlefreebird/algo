@@ -8,30 +8,26 @@ type BNode struct {
 	right *BNode
 }
 
-func f(tree *BNode) {
-	f1(tree)
-}
-
-func f1(t *BNode) (*BNode, *BNode) {
+func f(t *BNode) (*BNode, *BNode) {
 	if t.left == nil && t.right == nil {
 		return t, t
 	} else if t.left == nil {
-		_, l := f1(t.right)
-		t.right = l
-		l.left = t
-		return t, l
+		_, last := f(t.right)
+		t.right = last
+		last.left = t
+		return t, last
 	} else if t.right == nil {
-		f, _ := f1(t.left)
-		f.right = t
-		t.left = f
-		return f, t
+		first, _ := f(t.left)
+		first.right = t
+		t.left = first
+		return first, t
 	} else {
-		f, _ := f1(t.left)
-		_, l := f1(t.right)
-		f.right = t
-		t.left = f
-		t.right = l
-		l.left = t
-		return f, l
+		first, _ := f(t.left)
+		_, last := f(t.right)
+		first.right = t
+		t.left = first
+		t.right = last
+		last.left = t
+		return first, last
 	}
 }
