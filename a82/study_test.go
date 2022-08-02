@@ -1,9 +1,6 @@
-package a81
+package a82
 
-import (
-	"fmt"
-	"testing"
-)
+import "testing"
 
 func TestF(t *testing.T) {
 	cases := []struct {
@@ -12,25 +9,20 @@ func TestF(t *testing.T) {
 	}{
 		{
 			name: "case1",
-			s:    "123  456",
+			s:    "1234",
 		},
 		{
 			name: "case2",
-			s:    "123   ",
+			s:    "12",
 		},
 		{
 			name: "case3",
-			s:    "   1234",
-		},
-		{
-			name: "case4",
-			s:    "123 45    789   ",
+			s:    "1",
 		},
 	}
 	for _, item := range cases {
 		t.Run(item.name, func(t *testing.T) {
-			fmt.Println(item.s)
-			fmt.Println(f(item.s))
+			f(item.s)
 		})
 	}
 }
